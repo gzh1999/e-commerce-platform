@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Login.html~RF78a690f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\src\img\photos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
   </ItemGroup>
 
 </Project>
