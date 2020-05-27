@@ -1,0 +1,165 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2>忘记密码了？别担心，可以找回的。</h2>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/GZHjs/md5.js"></script>
+<style type="text/css">
+    table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size: 20px;
+        color: #333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+</style>
+
+<!-- Table goes in the document BODY -->
+<table class="gridtable">
+    <tr>
+        <th></th>
+        <th>信息</th>
+    </tr>
+    <tr>
+        <td>用户账号：</td>
+        <td><input id="Uname" type="text" disabled="disabled" /></td>
+    </tr>
+    <tr>
+        <td>真实姓名：</td>
+        <td><input id="RealName" type="text" disabled="disabled" /></td>
+    </tr>
+    <tr>
+        <td>密码：</td>
+        <td>
+            <input id="Pass" type="password" onclick="Change()" />
+            <span id="pws" style="color:orangered">请正确输入您的密码！(字母开头6--18位)</span>
+            <span id="pwss" style="color:orangered">请输入密码</span>
+        </td>
+    </tr>
+    <tr>
+        <td>电子邮件：</td>
+        <td>
+            <input id="Email" type="text" disabled="disabled" /><br />
+            <input id="Button1" type="button" value="发送验证码" onclick="GetYX()" />
+            <input id="Core" type="text" style="width:150px;" placeholder="请输入" />
+            <span id="em" style="color:orangered">请输入正确的验证码</span>
+        </td>
+    </tr>
+    <tr>
+        <td>手机号：</td>
+        <td><input id="Phone" type="text"disabled="disabled" /></td>
+    </tr>
+    <tr>
+        <td><input id="Button1" type="button" value="保存" onclick="UserInfoPassUpt()" class="btn btn-info" /><input id="Hidden1" type="hidden" /></td>
+        <td><input id="Button1" type="button" value="返回" class="btn btn-success" location.href="/Statisticss/Login" /></td>
+    </tr>
+</table>
+
+<script>
+    UserInfoFill();
+
+    $(function () {
+        document.getElementById("pws").style.display = "none";
+        document.getElementById("em").style.display = "none";
+        document.getElementById("pwss").style.display = "none";
+    })
+    function UserInfoFill() {
+        $.ajax({
+          url: 'http://localhost:50222/api/UserInfo/'+@ViewBag.UserId,
+          type: "get",
+          contentType: "application/json",
+          success: function (d) {
+              $("#Uname").val(d.uname);
+              $("#RealName").val(d.realName);
+              $("#Email").val(d.email);
+              $("#Phone").val(d.phone);
+          }
+      });
+    }
+    function Change() {
+        var pws = $("#Pass").val();
+        //密码验证
+        var regPass = /^[a-zA-Z]\w{5,17}$/;
+
+        if (regPass.test(pws)) {
+            document.getElementById("pws").style.display = "none";
+        }
+        else {
+            document.getElementById("pws").style.display = "block";
+        }
+    }
+    //获取邮箱验证码
+    function GetYX() {
+        var Email = $("#Email").val();
+
+        $.ajax({
+            url: 'http://localhost:50222/api/UserInfoAdd/QQMailMessage?Email=' + Email,
+            type: 'get',
+
+            success: function (d) {
+                alert('发送成功');
+                $("#Hidden1").val(d);
+            }
+        })
+    }
+
+    function UserInfoPassUpt() {
+        var Pass = $("#Pass").val();
+        var p = hex_md5(Pass); 
+
+        if (Pass == "") {
+            document.getElementById("pwss").style.display = "block";
+            return;
+        }
+
+        var Core = $("#Core").val();
+        var hidden = $("#Hidden1").val();
+        if (Core != hidden) {
+            document.getElementById("em").style.display = "block";
+            return;
+        }
+        
+
+        var obj = {};
+        obj.Pass = p;
+        obj.Id=@ViewBag.UserId,
+        $.ajax({
+            url: 'http://localhost:50222/api/UserInfoAdd/UserInfoPassUpt',
+            type: 'Post',
+            data: JSON.stringify(obj),
+            contentType: "application/json",
+            success: function (d) {
+                if (d > 0) {
+                    alert('密码重置成功');
+                    location.href = '/Statisticss/Login';
+                }
+                else {
+                    alert('密码重置失败');
+                    return;
+                }
+            }
+        })
+
+    }
+</script>

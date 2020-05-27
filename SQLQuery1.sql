@@ -13,8 +13,5 @@ create table UserInfo
 )
 insert into UserInfo values('admin','πÀ÷–∫¿','000','1427865035@qq.com','15030305695')
 
-select * from UserInfo
-
-
-
-select count(*) from UserInfo where Uname='admin' and Pass= '000'
+select * from UserInfo where Uname='xrk'
+select * from UserInfo where Id=5

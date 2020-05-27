@@ -1,17 +1,5 @@
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appsettings.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\bower.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\dist\i18n\en.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\dist\i18n\ru.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\package.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\src\i18n\en.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\src\i18n\ru.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\html-appui\src\data\data.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\html-appui\src\data\fontawesome.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\html-appui\src\data\ionicons.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\html-appui\src\package.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\vue-appui\npm-shrinkwrap.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\vue-appui\package.json
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\UI.exe
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\UI.deps.json
@@ -21,7 +9,6 @@ D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\UI.pdb
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\UI.Views.dll
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\UI.Views.pdb
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.RazorAssemblyInfo.cache
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.RazorAssemblyInfo.cs
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.AssemblyInfoInputs.cache
@@ -243,4 +230,7 @@ D:\大实训二\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.dll
 D:\大实训二\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.pdb
 D:\大实训二\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.genruntimeconfig.cache
 D:\大实训二\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\imgVer\data.json
-D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\imgVer\data.json
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Statisticss\Homepage.cshtml.g.cs
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Statisticss\Login.cshtml.g.cs
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Statisticss\ForgetPass.cshtml.g.cs
