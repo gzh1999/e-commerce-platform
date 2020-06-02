@@ -330,8 +330,8 @@
 
                                 <li class="dropdown dropdown-profile">
                                     <a href="javascript:void(0)" data-toggle="dropdown">
-                                        <span class="m-r-sm">John Doe <span class="caret"></span></span>
-                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/avatar3.jpg" alt="User profile pic" />
+                                        <span class="m-r-sm" id="Login">管理员：<span class="caret"></span></span>
+                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/Login1.jpg" alt="User profile pic" />
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="dropdown-header">
@@ -466,3 +466,13 @@
         font-weight: bold;
     }
 </style>
+
+<script>
+
+    var searchUrl = window.location.href;
+    var searchData = searchUrl.split("=");        //截取 url中的“=”,获得“=”后面的参数
+    var searchText = decodeURI(searchData[1]);//decodeURI解码第一个值
+    $("#Login").html(searchText);//显示出第一个参数用户id
+    //var searchtext2 = decodeuri(searchdata[2]);  //decodeURI解码第二个值
+    //$("#small").html(searchtext2);//显示出第二个参数用户昵称
+</script>

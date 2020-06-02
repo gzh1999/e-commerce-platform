@@ -42,6 +42,7 @@
                     <span>登录</span>
                     <i class="fa fa-check"></i>
                 </button>
+                <input id="Hidden2" type="hidden" />
             </div>
             <a id="UserInfoId" class="pass-forgot">忘记密码？</a>
         </div>
@@ -110,8 +111,8 @@
 </body>
 </html>
 
-<script>
 
+<script>
     //登录加验证码
     function Login() {
         var Pass = $("#pass").val();
@@ -153,10 +154,12 @@
                     data: JSON.stringify(obj),
                     contentType: "application/json",
                     success: function (d) {
-                        if (d != "") {
+                        if (d !=null) {
 
                             alert('登录成功');
-                            location.href = 'http://localhost:50871/Statisticss/Homepage';
+
+                            var url= location.href = encodeURI('http://localhost:50871/Statisticss/Homepage?realName='+d.realName);
+                            window.location.href = url;
                         }
                         else {
                             alert('登录失败');
@@ -177,6 +180,22 @@
             }
         });
     }
+    //查询出每个用户真实姓名
+    //function GetRealName() {
+    //    var name = $("#name").val();
+    //    $.ajax({
+    //        url: 'http://localhost:50222/api/UserInfoAdd/GetRealName?RealName=' + name,
+    //        type: 'get',
+    //        //contentType: "application/json",
+    //        success: function (d) {
+    //            $(d).each(function () {
+    //                var a = this.realName;
+    //                //var AA = window.document.cookie(a);
+    //                $("#Hidden2").val(a);
+    //            })
+    //        }
+    //    })
+    //}
     //获取邮箱验证码
     function GetYX() {
         var Email = $("#Email").val();
@@ -195,15 +214,21 @@
     var UserId = 0;
     $("#UserInfoId").click(function () {
         var name = $("#name").val();
-        $.ajax({
-            url: 'http://localhost:50222/api/UserInfoAdd/UserInfoNameById/?Uname=' + name,
-            type: 'get',
-            contentType: "application/json",
-            success: function (d) {
-                UserId = d.id;
-                location.href = '/Statisticss/ForgetPass/?id=' + UserId;
-            }
-        })
+
+        if (name == "") {
+            alert('找回密码需要填写账号！');
+            return;
+        } else {
+            $.ajax({
+                url: 'http://localhost:50222/api/UserInfoAdd/UserInfoNameById/?Uname=' + name,
+                type: 'get',
+                contentType: "application/json",
+                success: function (d) {
+                    UserId = d.id;
+                    location.href = '/Statisticss/ForgetPass/?id=' + UserId;
+                }
+            })
+        }
     })
 
     //注册
@@ -217,7 +242,7 @@
         obj.Pass = p;
         obj.Phone = $("#Phone").val();
 
-        
+
         var reregpass = $("#reregpass").val();
 
 
