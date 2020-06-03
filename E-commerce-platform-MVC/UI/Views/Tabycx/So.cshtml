@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Content -->
+<div class="container-fluid p-y-md">
+    <!-- Card Tabs -->
+    <h2 class="section-title">Card Tabs</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Card Tabs Default Style -->
+            <div class="card">
+                <ul class="nav nav-tabs" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#btabs-static-home">1</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-profile">2</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-3">3</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-4">4</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-5">5</a>
+                    </li>
+                    <li class="pull-right">
+                        <a href="#btabs-static-settings" data-toggle="tooltip" title="Settings"><i class="ion-ios-gear-outline"></i></a>
+                    </li>
+                </ul>
+                <div class="card-block tab-content">
+                    <div class="tab-pane active" id="btabs-static-home">
+                        <p>
+                            <div id="container" style="max-width:1600px;height:800px"></div>
+                            <script>
+
+
+                                var chart = Highcharts.chart('container', {
+                                    title: {
+                                        text: '2 ~ 9 月的衣服总量'
+                                    },
+                                    subtitle: {
+                                        text: '数据来源：商品管理（数据）'
+                                    },
+                                    yAxis: {
+                                        title: {
+                                            text: '衣服总量'
+                                        }
+                                    },
+                                    legend: {
+                                        layout: 'vertical',
+                                        align: 'right',
+                                        verticalAlign: 'middle'
+                                    },
+                                    plotOptions: {
+                                        series: {
+                                            label: {
+                                                connectorAllowed: false
+                                            },
+                                            pointStart: 2
+                                        }
+                                    },
+                                    series: [{
+                                        name: '男装',
+                                        data: [55, 66, 33, 44, 77, 88, 11, 100]
+                                    }, {
+                                        name: '女装',
+                                        data: [249, 24, 29, 29, 32, 30, 381, 404]
+                                    }, {
+                                        name: '童装',
+                                        data: [11, 17, 160, 197, 20, 24, 321, 393]
+                                    }, {
+                                        name: '项目开发',
+                                        data: [66, 55, 79, 12, 15, 22, 34, 34]
+                                    }, {
+                                        name: '其他',
+                                        data: [108, 58, 55, 48, 89, 16, 74, 181]
+                                    }],
+                                    responsive: {
+                                        rules: [{
+                                            condition: {
+                                                maxWidth: 500
+                                            },
+                                            chartOptions: {
+                                                legend: {
+                                                    layout: 'horizontal',
+                                                    align: 'center',
+                                                    verticalAlign: 'bottom'
+                                                }
+                                            }
+                                        }]
+                                    }
+                                });
+
+                            </script>
+                        <p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-profile">
+                        <p>
+                            2
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-3">
+                        <p>
+                            3
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-4">
+                        <p>
+                            4
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-5">
+                        <p>
+                            5
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-settings">
+                        <p>
+                            最右边的
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Card Tabs Default Style -->
+            <!-- Card Tabs Alternative Style -->
+            <!-- End Card Tabs Alternative Style -->
+        </div>
+        <!-- .col-md-12 -->
+    </div>
+
+</div>
+<!-- .container -->
+<!-- End Page Content -->
