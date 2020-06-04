@@ -13,6 +13,6 @@ create table UserInfo
 )
 insert into UserInfo values('admin','πÀ÷–∫¿','000','1427865035@qq.com','15030305695')
 
-select RealName from UserInfo where Uname = 'admin'
+select * from UserInfo where Uname = 'admin'
 
 drop table UserInfo

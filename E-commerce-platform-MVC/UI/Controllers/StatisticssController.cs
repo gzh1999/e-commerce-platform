@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using UI.Models;
 
 namespace UI.Controllers
 {
@@ -32,6 +36,11 @@ namespace UI.Controllers
             return View();
         }
         public IActionResult UserInfoPassUpt()
+        {
+            return View();
+        }
+        //反填用户的信息
+        public IActionResult UserMessageUpt()
         {
             return View();
         }
