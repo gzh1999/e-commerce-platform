@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="appui-free-bootstrap-3-admin-dashboard-template-front-end-website-template\angularjs-appui\src\img\photos\" />
     <Folder Include="wwwroot\angularjs-appui\src\img\photos\" />
   </ItemGroup>
 
@@ -371,6 +370,12 @@
     <None Include="wwwroot\html-appui\src\scss\ionicons\_ionicons-variables.scss" />
     <None Include="wwwroot\html-appui\src\scss\_mixins.scss" />
     <None Include="wwwroot\html-appui\src\scss\_variables.scss" />
+    <None Include="wwwroot\imgVer\img_ver.js" />
+    <None Include="wwwroot\imgVer\jquery.min.js" />
+    <None Include="wwwroot\MD5\md5.js" />
+    <None Include="wwwroot\moban3897\moban3897\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\moban3897\moban3897\js\index.js" />
+    <None Include="wwwroot\moban3897\moban3897\js\jquery.min.js" />
     <None Include="wwwroot\vue-appui\.babelrc" />
     <None Include="wwwroot\vue-appui\.editorconfig" />
     <None Include="wwwroot\vue-appui\.eslintignore" />

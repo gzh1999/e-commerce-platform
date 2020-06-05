@@ -3,16 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - UI</title>
-    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" />*@
+    <title>@ViewData["Title"] - MvcTool</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
     <!-- Meta -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <!-- Document title -->
-
 
 
     <meta name="description" content="AppUI - Admin Dashboard Template & UI Framework" />
@@ -32,18 +31,44 @@
 
     <!-- AppUI CSS stylesheets -->
     <link rel="stylesheet" id="css-font-awesome" href="~/html-appui/dist/assets/css/font-awesome.css" />
-
     <link rel="stylesheet" id="css-ionicons" href="~/html-appui/dist/assets/css/ionicons.css" />
     <link rel="stylesheet" id="css-bootstrap" href="~/html-appui/dist/assets/css/bootstrap.css" />
     <link rel="stylesheet" id="css-app" href="~/html-appui/dist/assets/css/app.css" />
     <link rel="stylesheet" id="css-app-custom" href="~/html-appui/dist/assets/css/app-custom.css" />
     <!-- End Stylesheets -->
-
-
-
-
 </head>
-<body class="app-ui layout-has-drawer layout-has-fixed-header">
+<body class="app-ui layout-has-drawer layout-has-fixed-header" onload="time()">
+    <script type="text/javascript">
+        var t = null;
+        t = setTimeout(time, 1000);//开始执行
+        function time() {
+            clearTimeout(t);//清除定时器
+            var d = new Date();
+            var n = d.getFullYear();
+            var y = d.getMonth() + 1;
+            var r = d.getDate();
+            var x = d.getDay();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            var weekday = new Array(7)
+            weekday[0] = "日";
+            weekday[1] = "一";
+            weekday[2] = "二";
+            weekday[3] = "三";
+            weekday[4] = "四";
+            weekday[5] = "五";
+            weekday[6] = "六";
+            function ling(i) {
+                if (i < 10) {
+                    i = '0' + i;
+                }
+                return i;
+            }
+            document.getElementById("timeShow").innerHTML = n + "年" + ling(y) + "月" + ling(r) + "日<br />" + "星期" + weekday[x] + " " + ling(h) + ":" + ling(m) + ":" + ling(s);
+            t = setTimeout(time, 1000); //设定定时器，循环执行
+        }
+    </script>
     <div class="app-layout-canvas">
         <div class="app-layout-container">
 
@@ -55,7 +80,7 @@
                 <div class="app-layout-drawer-scroll">
                     <!-- Drawer logo -->
                     <div id="logo" class="drawer-header">
-                        <a href="index.html"><img class="img-responsive" src="~/html-appui/dist/assets/img/logo/logo-backend.png" title="电商" alt="电商" /></a>
+                        <a href="index.html"><img class="img-responsive" src="~/html-appui/dist/assets/img/logo/logo-backend.png" title="AppUI" alt="AppUI" /></a>
                     </div>
 
                     <!-- Drawer navigation -->
@@ -65,7 +90,7 @@
                             <li class="nav-item nav-drawer-header" id="timeShow" style="color:orangered"></li>
 
                             <li class="nav-item active">
-                                <a href="Data.html"><i class="ion-ios-speedometer-outline"></i>首页</a>
+                                <a href="http://localhost:50871/Statisticss/Homepage"><i class="ion-ios-speedometer-outline"></i>首页</a>
                             </li>
 
                             <li class="nav-item nav-drawer-header">操作管理</li>
@@ -75,16 +100,20 @@
                                 <ul class="nav nav-subnav">
 
                                     <li>
-                                        <a href="#">添加商品</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">商品中心</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">购物车</a>
+                                        <a href="base_ui_buttons.html">Buttons</a>
                                     </li>
 
+                                    <li>
+                                        <a href="base_ui_cards.html">Cards</a>
+                                    </li>
 
+                                    <li>
+                                        <a href="base_ui_cards_api.html">Cards API</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_ui_layout.html">Layout</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -93,10 +122,24 @@
                                 <ul class="nav nav-subnav">
 
                                     <li>
-                                        <a href="base_forms_elements.html">订单中心</a>
+                                        <a href="base_forms_elements.html">Elements</a>
                                     </li>
 
+                                    <li>
+                                        <a href="base_forms_samples.html">Samples</a>
+                                    </li>
 
+                                    <li>
+                                        <a href="base_forms_pickers_select.html">Pickers &amp; Select</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_forms_validation.html">Validation</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_forms_wizard.html">Wizard</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -106,10 +149,24 @@
                                 <ul class="nav nav-subnav">
 
                                     <li>
-                                        <a href="#">财务1</a>
+                                        <a href="base_tables_styles.html">Styles</a>
                                     </li>
 
+                                    <li>
+                                        <a href="base_tables_responsive.html">Responsive</a>
+                                    </li>
 
+                                    <li>
+                                        <a href="base_tables_tools.html">Tools</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_tables_pricing.html">Pricing</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_tables_datatables.html">Wizard</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -119,10 +176,24 @@
                                 <ul class="nav nav-subnav">
 
                                     <li>
-                                        @Html.ActionLink("数据图表", "AllTapStatistics", "Tabycx")
+                                        <a href="base_pages_blank.html">Blank</a>
                                     </li>
 
+                                    <li>
+                                        <a href="base_pages_inbox.html">Inbox</a>
+                                    </li>
 
+                                    <li>
+                                        <a href="base_pages_invoice.html">Invoice</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_pages_profile.html">Profile</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_pages_search.html">Search</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -132,9 +203,32 @@
                                 <ul class="nav nav-subnav">
 
                                     <li>
-                                        <a href="#">系统设置</a>
+                                        <a href="base_js_maps.html">Maps</a>
                                     </li>
 
+                                    <li>
+                                        <a href="base_js_sliders.html">Sliders</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_js_charts_flot.html">Charts - Flot</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_js_charts_chartjs.html">Charts - Chart.js</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_js_charts_sparkline.html">Charts - Sparkline</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_js_draggable.html">Draggable</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="base_js_syntax_highlight.html">Syntax highlight</a>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -143,7 +237,10 @@
                     </nav>
                     <!-- End drawer navigation -->
 
-
+                    <div class="drawer-footer">
+                        <p class="copyright">阿里云商品管理</p>
+                        <a href="https://shapebootstrap.net/item/1525731-appui-admin-frontend-template/?ref=rustheme" target="_blank" rel="nofollow">Purchase a license</a>
+                    </div>
                 </div>
                 <!-- End drawer scroll area -->
             </aside>
@@ -233,23 +330,27 @@
 
                                 <li class="dropdown dropdown-profile">
                                     <a href="javascript:void(0)" data-toggle="dropdown">
-                                        <span class="m-r-sm">   <span class="caret"></span></span>
-
-
-                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/8e8d45cb2d94ccd2ca0e1f121d017a7683c6ea19.jpg" alt="User profile pic" />
+                                        <span class="m-r-sm" id="Login"><span class="caret"></span></span>
+                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/Login1.jpg" alt="User profile pic" />
                                     </a>
+                                    @*<div id="bdtts_div_id">
+                                        <audio id="tts_autio_id" autoplay="autoplay">
+                                            <source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=5&amp;per=1&amp;text=请输入账号" type="audio/mpeg">
+                                            <embed id="tts_embed_id" height="0" width="0" src="">
+                                        </audio>
+                                    </div>*@
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="dropdown-header">
                                             Pages
                                         </li>
                                         <li>
-                                            <a href="base_pages_profile.html">Profile</a>
+                                            <a href="http://localhost:50871/Statisticss/UserMessageUpt" >个人资料</a>
                                         </li>
                                         <li>
                                             <a href="base_pages_profile.html"><span class="badge badge-success pull-right">3</span> Blog</a>
                                         </li>
                                         <li>
-                                            <a href="Login.html">Logout</a>
+                                            <a href="http://localhost:50871/Statisticss/Login">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -292,13 +393,13 @@
                     <div class="card-block">
                         <div class="row text-center">
                             <div class="col-xs-6">
-                                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="http://localhost:50871/Tabycx/AllTapStatistics">
+                                <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="index.html">
                                     <i class="ion-speedometer fa-4x"></i>
                                     <p>Admin</p>
                                 </a>
                             </div>
                             <div class="col-xs-6">
-                                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="http://localhost:50871/Tabycx/ManTries">
+                                <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="frontend_home.html">
                                     <i class="ion-laptop fa-4x"></i>
                                     <p>Frontend</p>
                                 </a>
@@ -333,12 +434,7 @@
     <script src="~/html-appui/dist/assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
 
     <!-- Page JS Code -->
-    <script src="~/html-appui/dist/assets/js/plugins/chartjs/Chart.min.js"></script>
-
     <script src="~/html-appui/dist/assets/js/pages/index.js"></script>
-
-
-
     <script>
         $(function () {
             // Init page helpers (Slick Slider plugin)
@@ -348,8 +444,70 @@
 
 
 
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
     @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+<style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #timeShow {
+        box-sizing: border-box;
+        width: 300px;
+        height: 45px;
+        padding-top: 0px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        /*margin: 200px auto;*/
+        /*text-align: center;*/
+        font-size: 15px;
+        font-family: cursive;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+
+    var searchUrl = window.location.href;
+    var searchData = searchUrl.split("=");        //截取 url中的“=”,获得“=”后面的参数
+    var searchText = decodeURI(searchData[1]);//decodeURI解码第一个值
+    $("#Login").html(searchText);//显示出第一个参数用户id
+    //var searchtext2 = decodeuri(searchdata[2]);  //decodeURI解码第二个值
+    //$("#small").html(searchtext2);//显示出第二个参数用户昵称
+
+    //var a = searchText;
+    //$(function () {
+    //        var ttsDiv = document.getElementById('bdtts_div_id');
+    //        var ttsAudio = document.getElementById('tts_autio_id');
+    //        var ttsText = a;
+    //        //var ttsText = $("#Login").val();
+    //        // 文字转语音
+    //        ttsDiv.removeChild(ttsAudio);
+    //        var au1 = '<audio id="tts_autio_id" autoplay="autoplay">';
+    //        var sss = '<source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&per=3&spd=5&text=' + "欢迎管理员" + ttsText + "登录" + '" type="audio/mpeg">';
+    //        var eee = '<embed id="tts_embed_id" height="0" width="0" src="">';
+    //        var au2 = '</audio>';
+    //        ttsDiv.innerHTML = au1 + sss + eee + au2;
+    //        ttsAudio = document.getElementById('tts_autio_id');
+    //        ttsAudio.play();
+    //});
+
+    
+    //$(function () {
+    //    if (getCookie("name") == undefined) {
+    //        $("#Login").html("<a href='/UserInfo/Loginif'>请登录</a>");
+    //    }
+    //    else {
+    //        $("#Login").html(getCookie("name"));
+    //    }
+    //});
+
+
+</script>
