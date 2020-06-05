@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SanZuShiZhanEr\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj": {}
+    "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj": {}
   },
   "projects": {
-    "E:\\SanZuShiZhanEr\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj": {
+    "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SanZuShiZhanEr\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj",
+        "projectUniqueName": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj",
         "projectName": "UI",
-        "projectPath": "E:\\SanZuShiZhanEr\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj",
-        "packagesPath": "C:\\Users\\16645\\.nuget\\packages\\",
-        "outputPath": "E:\\SanZuShiZhanEr\\电商代码MVC\\E-commerce-platform-MVC\\UI\\obj\\",
+        "projectPath": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj",
+        "packagesPath": "C:\\Users\\sun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\16645\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\sun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -65,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

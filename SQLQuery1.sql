@@ -13,27 +13,6 @@ create table UserInfo
 )
 insert into UserInfo values('admin','πÀ÷–∫¿','000','1427865035@qq.com','15030305695')
 
-select * from UserInfo
-select *  from select *  from TiXian
-insert into TiXian values(getdate())
-select *  from TiXian
-drop table Wallet
+select * from UserInfo where Uname = 'admin'
 
-
-create table Wallet
-(
-Id int identity primary key,
-yueMoney decimal,
-dayMoney decimal,
-dayModeryZc decimal,
-leijishouru decimal,
-leijizhichu decimal
-)
-insert into Wallet values(500000.21,54877.2,5864.1,8745.4,8745.5)
-create  table  TiXian
-(
-Id int identity primary key,
-Data varchar(80),
-jine decimal,
-Zt varchar(80)
-)
+drop table UserInfo
