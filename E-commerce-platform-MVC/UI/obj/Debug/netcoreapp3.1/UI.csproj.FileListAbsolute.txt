@@ -341,7 +341,6 @@ D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\bin\Debug\netcore
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csproj.CoreCompileInputs.cache
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.MvcApplicationPartsAssemblyInfo.cache
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.RazorAssemblyInfo.cache
@@ -371,3 +370,8 @@ D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcore
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\ManTries.cshtml.g.cs
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\WomenTries.cshtml.g.cs
 D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\So.cshtml.g.cs
+D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\Soto.cshtml.g.cs
+D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\baseTool.cshtml.g.cs
+D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
+D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\NeedWere.cshtml.g.cs
+D:\A_Githup\thisOnline\two\Againmvc\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tabycx\WoW.cshtml.g.cs
