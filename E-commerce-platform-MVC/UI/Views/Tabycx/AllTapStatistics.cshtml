@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/YcxTool/MySelf.css" rel="stylesheet" />
+
+<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+<script>
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/user',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/aiz',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/shopOne',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/shopTow',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/shopThree',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/shopfore',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/userone',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+    $(tool());
+    function tool() {
+        $.ajax({
+            url: 'http://localhost:50222/data/usertwo',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $(data).each(
+                    function () {
+                        $("#xx").append('<input type="text" name="name"  value="' + data + '" />');
+                    }
+
+                );
+            }
+
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

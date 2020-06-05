@@ -330,15 +330,21 @@
 
                                 <li class="dropdown dropdown-profile">
                                     <a href="javascript:void(0)" data-toggle="dropdown">
-                                        <span class="m-r-sm">John Doe <span class="caret"></span></span>
-                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/avatar3.jpg" alt="User profile pic" />
+                                        <span class="m-r-sm" id="Login"><span class="caret"></span></span>
+                                        <img class="img-avatar img-avatar-48" src="~/html-appui/dist/assets/img/avatars/Login1.jpg" alt="User profile pic" />
                                     </a>
+                                    @*<div id="bdtts_div_id">
+                                        <audio id="tts_autio_id" autoplay="autoplay">
+                                            <source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&amp;ie=UTF-8&amp;spd=5&amp;per=1&amp;text=请输入账号" type="audio/mpeg">
+                                            <embed id="tts_embed_id" height="0" width="0" src="">
+                                        </audio>
+                                    </div>*@
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="dropdown-header">
                                             Pages
                                         </li>
                                         <li>
-                                            <a href="base_pages_profile.html">Profile</a>
+                                            <a href="http://localhost:50871/Statisticss/UserMessageUpt" >个人资料</a>
                                         </li>
                                         <li>
                                             <a href="base_pages_profile.html"><span class="badge badge-success pull-right">3</span> Blog</a>
@@ -466,3 +472,42 @@
         font-weight: bold;
     }
 </style>
+
+<script>
+
+    var searchUrl = window.location.href;
+    var searchData = searchUrl.split("=");        //截取 url中的“=”,获得“=”后面的参数
+    var searchText = decodeURI(searchData[1]);//decodeURI解码第一个值
+    $("#Login").html(searchText);//显示出第一个参数用户id
+    //var searchtext2 = decodeuri(searchdata[2]);  //decodeURI解码第二个值
+    //$("#small").html(searchtext2);//显示出第二个参数用户昵称
+
+    //var a = searchText;
+    //$(function () {
+    //        var ttsDiv = document.getElementById('bdtts_div_id');
+    //        var ttsAudio = document.getElementById('tts_autio_id');
+    //        var ttsText = a;
+    //        //var ttsText = $("#Login").val();
+    //        // 文字转语音
+    //        ttsDiv.removeChild(ttsAudio);
+    //        var au1 = '<audio id="tts_autio_id" autoplay="autoplay">';
+    //        var sss = '<source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&per=3&spd=5&text=' + "欢迎管理员" + ttsText + "登录" + '" type="audio/mpeg">';
+    //        var eee = '<embed id="tts_embed_id" height="0" width="0" src="">';
+    //        var au2 = '</audio>';
+    //        ttsDiv.innerHTML = au1 + sss + eee + au2;
+    //        ttsAudio = document.getElementById('tts_autio_id');
+    //        ttsAudio.play();
+    //});
+
+    
+    //$(function () {
+    //    if (getCookie("name") == undefined) {
+    //        $("#Login").html("<a href='/UserInfo/Loginif'>请登录</a>");
+    //    }
+    //    else {
+    //        $("#Login").html(getCookie("name"));
+    //    }
+    //});
+
+
+</script>

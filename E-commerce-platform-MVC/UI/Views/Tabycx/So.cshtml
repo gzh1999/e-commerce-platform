@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div>
+        <input type="hidden" name="name" value="@ViewBag.free" id="free"/>
+       
+
+    </div>
+    <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+<!-- Page Content -->
+<div class="container-fluid p-y-md">
+    <!-- Card Tabs -->
+   
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Card Tabs Default Style -->
+            <div class="card">
+                <ul class="nav nav-tabs" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#btabs-static-home">商品统计</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-profile">人数统计</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-static-3">浏览次数</a>
+                    </li>
+                    
+                    <li class="pull-right">
+                        <a href="#btabs-static-settings" data-toggle="tooltip" title="Settings"><i class="ion-ios-gear-outline"></i></a>
+                    </li>
+                </ul>
+                <div class="card-block tab-content">
+                    <div class="tab-pane active" id="btabs-static-home">
+                       
+                            <div id="container" style="max-width:1600px;height:600px"></div>
+                            <script>
+                                
+
+
+                                var chart = Highcharts.chart('container', {
+                                    title: {
+                                        text: '2 ~ 9 月的衣服总量'
+                                    },
+                                    subtitle: {
+                                        text: '数据来源：商品管理（数据）'
+                                    },
+                                    yAxis: {
+                                        title: {
+                                            text: '衣服总量'
+                                        }
+                                    },
+                                    legend: {
+                                        layout: 'vertical',
+                                        align: 'right',
+                                        verticalAlign: 'middle'
+                                    },
+                                    plotOptions: {
+                                        series: {
+                                            label: {
+                                                connectorAllowed: false
+                                            },
+                                            pointStart: 2
+                                        }
+                                    },                                    
+                                    series: [{
+                                        name: '男装',
+                                        data: [1, 66, 33, 44, 77, 88, 11, 100]
+                                    }, {
+                                        name: '女装',
+                                        data: [249, 24, 29, 29, 32, 30, 381, 404]
+                                    }, {
+                                        name: '童装',
+                                        data: [11, 17, 160, 197, 20, 24, 321, 393]
+                                    }, {
+                                        name: '项目开发',
+                                        data: [66, 55, 79, 12, 15, 22, 34, 34]
+                                    }, {
+                                        name: '其他',
+                                        data: [108, 58, 55, 48, 89, 16, 74, 181]
+                                    }],
+                                    responsive: {
+                                        rules: [{
+                                            condition: {
+                                                maxWidth: 500
+                                            },
+                                            chartOptions: {
+                                                legend: {
+                                                    layout: 'horizontal',
+                                                    align: 'center',
+                                                    verticalAlign: 'bottom'
+                                                }
+                                            }
+                                        }]
+                                    }
+                                });
+
+                            </script>
+                        
+                            
+                    </div>
+                    <div class="tab-pane" id="btabs-static-profile">
+                     
+                    </div>
+                    <div class="tab-pane" id="btabs-static-3">
+                     
+                    </div>
+                    
+                    <div class="tab-pane" id="btabs-static-settings">
+                        <p>
+                            最右边的
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Card Tabs Default Style -->
+            <!-- Card Tabs Alternative Style -->
+            <!-- End Card Tabs Alternative Style -->
+        </div>
+        <!-- .col-md-12 -->
+    </div>
+
+</div>
+<!-- .container -->
+<!-- End Page Content -->

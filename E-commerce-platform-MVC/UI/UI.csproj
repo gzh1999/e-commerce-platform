@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\angularjs-appui\src\img\photos\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\angularjs-appui\config.js" />
     <None Include="wwwroot\angularjs-appui\dist\app\app.config.js" />
     <None Include="wwwroot\angularjs-appui\dist\app\app.js" />
@@ -366,6 +370,12 @@
     <None Include="wwwroot\html-appui\src\scss\ionicons\_ionicons-variables.scss" />
     <None Include="wwwroot\html-appui\src\scss\_mixins.scss" />
     <None Include="wwwroot\html-appui\src\scss\_variables.scss" />
+    <None Include="wwwroot\imgVer\img_ver.js" />
+    <None Include="wwwroot\imgVer\jquery.min.js" />
+    <None Include="wwwroot\MD5\md5.js" />
+    <None Include="wwwroot\moban3897\moban3897\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\moban3897\moban3897\js\index.js" />
+    <None Include="wwwroot\moban3897\moban3897\js\jquery.min.js" />
     <None Include="wwwroot\vue-appui\.babelrc" />
     <None Include="wwwroot\vue-appui\.editorconfig" />
     <None Include="wwwroot\vue-appui\.eslintignore" />
@@ -386,6 +396,14 @@
     <None Include="wwwroot\vue-appui\config\index.js" />
     <None Include="wwwroot\vue-appui\config\prod.env.js" />
     <None Include="wwwroot\vue-appui\config\test.env.js" />
+    <None Include="wwwroot\vue-appui\dist\static\css\app.200553acad28b4e8337f04c78199bb89.css.map" />
+    <None Include="wwwroot\vue-appui\dist\static\images\logo_facebook.svg" />
+    <None Include="wwwroot\vue-appui\dist\static\images\logo_instagram.svg" />
+    <None Include="wwwroot\vue-appui\dist\static\images\logo_twitter.svg" />
+    <None Include="wwwroot\vue-appui\dist\static\images\logo_weibo.svg" />
+    <None Include="wwwroot\vue-appui\dist\static\js\app.087a6ca7fbbfbbde3aa8.js" />
+    <None Include="wwwroot\vue-appui\dist\static\js\manifest.41c5532c687086a0f1d7.js" />
+    <None Include="wwwroot\vue-appui\dist\static\js\vendor.d60e40b9a16cbbd229e0.js" />
     <None Include="wwwroot\vue-appui\docs\getting-started.md" />
     <None Include="wwwroot\vue-appui\docs\recipes\chartjs.md" />
     <None Include="wwwroot\vue-appui\docs\recipes\hide-show-elements-on-specific-routes.md" />
