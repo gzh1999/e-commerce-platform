@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewData["Title"] = "UptGoods";
+}
+
+<br />
+<br />
+<br />
+
+<div>
+    <div style="margin-left:80px">
+        <div style="float:left">
+            <input id="Button1" type="button" style="width:150px;height:50px;background-color:cornflowerblue" value="商品管理" onclick="location.href='/sy/Show2'" />
+            <input id="Button1" type="button" style="width:150px;height:50px;background-color:cornflowerblue" value="商品添加" onclick="location.href='/sy/AddGoods'" />
+            <input id="Button1" type="button" style="width:150px;height:50px;background-color:cornflowerblue" value="分类管理" onclick="location.href='/sy/ShowType'" />
+        </div>
+    </div>
+    <div style="margin-right: 150px">
+        <div style="float:right">
+            <input id="GoodsName" type="text" style="width:300px;height:30px" placeholder="请输入关键字" />
+            <input id="Button1" type="button" style="width:70px;height:40px;background-color:darkgoldenrod" value="搜索" onclick="ShowGoods(1)" />
+            <input id="Button1" type="button" style="width:150px;height:50px;background-color:cornflowerblue" value="列表显示" onclick="location.href='/sy/ShowGoods'" />
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+
+
+
+<div style="margin-left:80px;font-size:28px">
+    <div>
+        <div style="font-weight:bolder">1.商品基本信息</div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">商品分类：</span><select id="TypeName"></select>
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">商品类型：</span><select id="KindName"></select>
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">商品名称：</span><input id="GoodsNames" type="text" style="width:1000px" />
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">商品副标题：</span><input id="GoodsTitle" type="text" style="width:1000px" />
+        </div>
+        @*<div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商品图片:宝贝图片尺寸：800*800px，主图大小不能超过800k.
+                <div style="margin-left:120px"><input id="upload" type="file" /></div>
+            </div>*@
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">商品规格：</span>
+            <input id="yes" type="radio" name="1" value="true" />需要规格&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="no" type="radio" name="1" value="false" />不需要规格
+            @*<div style="margin-left:100px">
+                    &nbsp;&nbsp;&nbsp;
+                    <input id="s" type="radio" />S
+                    <input id="m" type="radio" />M
+                    <input id="l" type="radio" />L
+                    <input id="xl" type="radio" />XL
+                    <input id="xxl" type="radio" />XXL
+                </div>*@
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">原价：</span><input id="GoodsPrice" type="text" style="width:1000px" />
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">赠送积分：</span><input id="GoodsJifen" type="text" style="width:1000px" />
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="vertical-align:middle">商品简介：</span><textarea id="GoodsIntroductory" rows="2" cols="20" style="width:1000px;height:300px"></textarea>
+        </div>
+    </div>
+    <div>
+        <div style="font-weight:bolder">2.商品物流服务</div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="text-align:center">实名认证：</span><select id="SendName"></select>
+        </div>
+    </div>
+    <div>
+        <div style="font-weight:bolder">3.售后信息设置</div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="GoodsSale" type="radio" name="2" value="true" />7天无理由退换
+        </div>
+    </div>
+    <div>
+        <div style="font-weight:bolder">4.商品其他信息</div>
+        <div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="text-align:center">库存计数：</span>
+                <input id="GoodsStock" type="text" style="width:200px" /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="GoodsBuyStock" type="radio" name="3" value="true" />买家拍下减库存
+            </div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="text-align:center">上架时间：</span>
+                <input id="Radio1" type="radio" name="4" value="true" />立即上架
+                <input id="Radio2" type="radio" name="4" value="false" />定时上架
+            </div>
+        </div>
+    </div>
+    <div>
+        <input id="Button1" style="width:130px;height:40px" type="button" value="保存" class="btn btn-info" onclick="UptGoods()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Button2" style="width:130px;height:40px" type="button" value="返回" class="btn btn-default" onclick="location.href='/Goods/ShowGoods'" />
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        //第一次加载
+        BandType();
+        BandKind();
+        BandSend();
+        Fill();
+        //绑定分类
+        function BandType() {
+            $.ajax
+                ({
+                    url: "http://localhost:50222/api/GoodsBandType/Get",
+                    type: "get",
+                    dataType: "json",
+                    success: function (d) {
+                        //清空下拉框
+                        $("#TypeName").empty();
+                        $("#TypeName").append("<option value=''>==请选择==</option>");
+                        //拼接一个下拉项
+                        $(d).each(function () {
+                            var opt = "<option value=" + this.id + ">" + this.typeName + "</option>";
+                            //将数据放入表格
+                            $("#TypeName").append(opt);
+                        });
+                    }
+                })
+        }
+        //绑定类型
+        function BandKind() {
+            $.ajax
+                ({
+                    url: "http://localhost:50222/api/GoodsKind/Get",
+                    type: "get",
+                    dataType: "json",
+                    success: function (d) {
+                        //清空下拉框
+                        $("#KindName").empty();
+                        $("#KindName").append("<option value=''>==请选择==</option>");
+                        //拼接一个下拉项
+                        $(d).each(function () {
+                            var opt = "<option value=" + this.id + ">" + this.kindName + "</option>";
+                            //将数据放入表格
+                            $("#KindName").append(opt);
+                        });
+                    }
+                })
+        }
+        //绑定快递
+        function BandSend() {
+            $.ajax
+                ({
+                    url: "http://localhost:50222/api/GoodsSend/Get",
+                    type: "get",
+                    dataType: "json",
+                    success: function (d) {
+                        //清空下拉框
+                        $("#SendName").empty();
+                        $("#SendName").append("<option value=''>==请选择==</option>");
+                        //拼接一个下拉项
+                        $(d).each(function () {
+                            var opt = "<option value=" + this.id + ">" + this.sendName + "</option>";
+                            //将数据放入表格
+                            $("#SendName").append(opt);
+                        });
+                    }
+                })
+        }
+
+        //反填数据
+        function Fill() {
+            $.ajax({
+                url: "http://localhost:50222/api/Goods/Get1?Id="+@ViewContext.RouteData.Values["Id"],
+                type: "get",
+                dataType:"json",
+                success: function (d) {
+                    //反填
+                    $("#GoodsNames").val(d.goodsName);
+                    $("#GoodsTitle").val(d.goodsTitle);
+                    $("#GoodsPrice").val(d.goodsPrice);
+                    $("#GoodsJifen").val(d.goodsJifen);
+                    $("#GoodsIntroductory").val(d.goodsIntroductory);
+                    $("#GoodsStock").val(d.goodsStock);
+
+                    $("#SendName").val(d.goodsSend);
+                    $("#TypeName").val(d.goodssType);
+                    $("#KindName").val(d.goodsKind);
+
+                    //单选
+                    if (d.yes) {
+                        yes.checked = true;
+                    }
+                    else {
+                        no.checked = true;
+                    }
+                    if (d.GoodsSale) {
+                        GoodsSale.checked = true;
+                    }
+                    else {
+                        GoodsSale.checked = false;
+                    }
+                    if (d.GoodsBuyStock) {
+                        GoodsBuyStock.checked = true;
+                    }
+                    else {
+                        GoodsBuyStock.checked = false;
+                    }
+                    if (d.Radio1) {
+                        Radio1.checked = true;
+                    }
+                    else {
+                        Radio2.checked = true;
+                    }
+                }
+            })
+        }
+        //修改函数
+        function UptGoods() {
+            //获取表单的值
+            var obj = {};
+            //单选的获取
+            obj.goodsSize = $("#yes").prop("checked");
+            obj.goodsSale = $("#GoodsSale").prop("checked");
+            obj.goodsBuyStock = $("#GoodsBuyStock").prop("checked");
+            obj.godsOnTimes = $("#Radio1").prop("checked") ? 1 : 0;
+
+            //文本框
+            obj.goodsName = $("#GoodsNames").val();
+            obj.goodsTitle = $("#GoodsTitle").val();
+            obj.goodsPrice = parseFloat($("#GoodsPrice").val());
+            obj.goodsJifen = parseInt($("#GoodsJifen").val());
+            obj.goodsIntroductory = $("#GoodsIntroductory").val();
+            obj.goodsStock = parseInt($("#GoodsStock").val());
+            //下拉
+            obj.goodsSend = parseInt($("#SendName").val());
+            obj.goodssType = parseInt($("#TypeName").val());
+            obj.goodsKind = parseInt($("#KindName").val());
+
+            //修改
+            $.ajax({
+                url: "http://localhost:50222/api/Goods/Post",
+                type: "Post",
+                data: JSON.stringify(obj),
+                contentType: "application/json",
+                success: function (d) {
+                    if (d != "") {
+                        alert("修改成功");
+                        location.href = '/sy/ShowGoods';
+                    }
+                    else {
+                        alert("修改失败");
+                        location.href = '/sy/ShowGoods';
+                    }
+                }
+            })
+        }
+    </script>
+}
