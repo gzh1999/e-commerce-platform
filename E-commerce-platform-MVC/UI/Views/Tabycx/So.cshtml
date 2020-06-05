@@ -46,14 +46,14 @@
 
                                 var chart = Highcharts.chart('container', {
                                     title: {
-                                        text: '2 ~ 9 月的衣服总量'
+                                        text: '2 ~ 9 男装总量'
                                     },
                                     subtitle: {
                                         text: '数据来源：商品管理（数据）'
                                     },
                                     yAxis: {
                                         title: {
-                                            text: '衣服总量'
+                                            text: '男装总量'
                                         }
                                     },
                                     legend: {
@@ -71,19 +71,7 @@
                                     },                                    
                                     series: [{
                                         name: '男装',
-                                        data: [1, 66, 33, 44, 77, 88, 11, 100]
-                                    }, {
-                                        name: '女装',
-                                        data: [249, 24, 29, 29, 32, 30, 381, 404]
-                                    }, {
-                                        name: '童装',
-                                        data: [11, 17, 160, 197, 20, 24, 321, 393]
-                                    }, {
-                                        name: '项目开发',
-                                        data: [66, 55, 79, 12, 15, 22, 34, 34]
-                                    }, {
-                                        name: '其他',
-                                        data: [108, 58, 55, 48, 89, 16, 74, 181]
+                                        data: [5000, 2000, 4500, 4000, 8000, 3020, 2000, 2800]
                                     }],
                                     responsive: {
                                         rules: [{
@@ -106,10 +94,112 @@
                             
                     </div>
                     <div class="tab-pane" id="btabs-static-profile">
-                     
+                        <div id="one" style="max-width:1600px;height:600px"></div>
+                        <script>
+
+
+
+                            var chart = Highcharts.chart('one', {
+                                title: {
+                                    text: '2 ~ 9 浏览量'
+                                },
+                                subtitle: {
+                                    text: '数据来源：商品管理（数据）'
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: '浏览次数'
+                                    }
+                                },
+                                legend: {
+                                    layout: 'vertical',
+                                    align: 'right',
+                                    verticalAlign: 'middle'
+                                },
+                                plotOptions: {
+                                    series: {
+                                        label: {
+                                            connectorAllowed: false
+                                        },
+                                        pointStart: 2
+                                    }
+                                },
+                                series: [{
+                                    name: '浏览次数',
+                                    data: [9, 8, 7, 11, 20, 50, 100, 200]
+                                }],
+                                responsive: {
+                                    rules: [{
+                                        condition: {
+                                            maxWidth: 500
+                                        },
+                                        chartOptions: {
+                                            legend: {
+                                                layout: 'horizontal',
+                                                align: 'center',
+                                                verticalAlign: 'bottom'
+                                            }
+                                        }
+                                    }]
+                                }
+                            });
+
+                        </script>
+
                     </div>
                     <div class="tab-pane" id="btabs-static-3">
-                     
+                        <div id="ones" style="max-width:1600px;height:600px"></div>
+                        <script>
+
+
+
+                            var chart = Highcharts.chart('ones', {
+                                title: {
+                                    text: '2 ~ 9 月的衣服总量'
+                                },
+                                subtitle: {
+                                    text: '数据来源：商品管理（数据）'
+                                },
+                                yAxis: {
+                                    title: {
+                                        text: '衣服总量'
+                                    }
+                                },
+                                legend: {
+                                    layout: 'vertical',
+                                    align: 'right',
+                                    verticalAlign: 'middle'
+                                },
+                                plotOptions: {
+                                    series: {
+                                        label: {
+                                            connectorAllowed: false
+                                        },
+                                        pointStart: 2
+                                    }
+                                },
+                                series: [{
+                                    name: '男装',
+                                    data: [11, 8, 3, 4, 7,8, 31, 10]
+                                }],
+                                responsive: {
+                                    rules: [{
+                                        condition: {
+                                            maxWidth: 500
+                                        },
+                                        chartOptions: {
+                                            legend: {
+                                                layout: 'horizontal',
+                                                align: 'center',
+                                                verticalAlign: 'bottom'
+                                            }
+                                        }
+                                    }]
+                                }
+                            });
+
+                        </script>
+
                     </div>
                     
                     <div class="tab-pane" id="btabs-static-settings">
