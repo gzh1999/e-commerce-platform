@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj": {}
+    "D:\\大实训二\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj": {
+    "D:\\大实训二\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj",
+        "projectUniqueName": "D:\\大实训二\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj",
         "projectName": "UI",
-        "projectPath": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\UI.csproj",
-        "packagesPath": "C:\\Users\\sun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sun\\Desktop\\电商系统\\MVC - 副本\\E-commerce-platform-MVC\\UI\\obj\\",
+        "projectPath": "D:\\大实训二\\电商代码MVC\\E-commerce-platform-MVC\\UI\\UI.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\大实训二\\电商代码MVC\\E-commerce-platform-MVC\\UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\sun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
