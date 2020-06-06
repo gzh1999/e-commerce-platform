@@ -250,3 +250,6 @@ D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Tixian\Index.cshtml.g.cs
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Wallet\finanacne.cshtml.g.cs
 D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Wallet\qwe.cshtml.g.cs
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Find.cshtml.g.cs
+D:\大实训二\电商代码MVC\E-commerce-platform-MVC\UI\obj\Debug\netcoreapp3.1\Razor\Views\Orders\OrdersShow.cshtml.g.cs
