@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Show";
+}
+
+
+<!-- Page Content -->
+<div class="container-fluid p-y-md">
+    <!-- Cards API, functionality initialized in App() -> uiCardsApi() -->
+    <h2 class="section-title">权限设置</h2>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card" id="sample-card">
+                <div class="card-header">
+                    <button class="btn btn-app btn-pill btn-sm" type="button" onclick="App.cards( '#sample-card', 'content_toggle' );">添加管理</button>
+                    <ul class="card-actions">
+                        <li>
+                            <button type="button" data-toggle="card-action" data-action="fullscreen_toggle"></button>
+                        </li>
+                        <li>
+                            <button type="button" data-toggle="card-action" data-action="content_toggle"></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-block">
+                    <table width="80%">
+                        <tr>
+                            <td>姓名:</td>
+                            <td>手机号:</td>
+                            <td>所属分组:</td>
+                            <td>状态:</td>
+                            <td>备注:</td>
+                        </tr>
+                        <tr>
+                            <td><input id="Mname" type="text" /></td>
+                            <td><input id="Modile" type="text" /></td>
+                            <td><select id="Pdd"></select></td>
+                            <td>
+                                <input id="cb" type="radio" value="true" alt="禁用" name="1" />禁用&nbsp;
+                                <input id="cb" type="radio" value="false" alt="未禁用" name="1" />未禁用
+                            </td>
+                            <td> <textarea id="Cwen" name="cont" cols="20" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input id="Button3"  class="btn btn-app" type="button"  value="保存" onclick="Add()"  /></td>
+                            <td><input id="Button4"  class="btn btn-app" type="button" value="取消" onclick="Poos()" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- .col-sm-12 -->
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <p>权限设置 </p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>手机号</th>
+                                    <th>所属分组</th>
+                                    <th>状态</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="td">
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- .table-responsive -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        PostShow();
+        BandSelCarType();
+    })
+    function PostShow() {
+        $.ajax({
+            url: 'http://localhost:50222/LXW/Lxwshow',
+            type: 'get',
+            dataType: 'json',
+            async: true,
+            crossDomain: true,
+            success: function (d) {
+                $("#td").empty();
+                $(d).each(function () {
+                    var line = '<tr>'
+                        + '<td>' + this.mname + '</td>'
+                        + '<td>' + this.modile + '</td>'
+                        + '<td>' + this.dname + '</td>'
+                        + '<td>' + (this.mstate == true ? '启用' : '禁用') + '</td>'
+                        + '<td>' + this.mnotes + '</td>'
+                        + '<td><input id="Button1" type="button" value="删除" class="btn btn-app" onclick=Del(' + this.mid + ') />&nbsp;<input id="Button2" type="button" value="编辑" class="btn btn-app"  onclick="hom(' + this.mid + ')"/></td>'
+                        + '</tr>'
+                    $("#td").append(line);
+                    BandSelCarType();
+                })
+            }
+        })
+    }
+    function so() {
+        location.href = '/Power/Show';
+    }
+
+    function Add() {
+        var obj = {};
+        obj.Mname = $("#Mname").val();
+        obj.Modile = $("#Modile").val();
+        obj.Did = parseInt($("#Pdd").val());
+        obj.Mstate = $("#cb").prop("checked");
+        obj.Mnotes = $("#Cwen").val();
+        $.ajax({
+            url: "http://localhost:50222/LXW/Addlxw",
+            type: 'post',
+            data: JSON.stringify(obj),
+            contentType : "application/json",
+            dataType: "json",
+            success: function (d) {
+                if (d > 0) {
+                    alert('添加成功');
+                    location.href = '/LXW/Show';
+                }
+                else {
+                    alert('添加失败');
+                }
+            }
+        })
+
+    }
+
+    function Del(id) {
+        if (confirm('确认要删除吗？')) {
+            $.ajax({
+                url: 'http://localhost:50222/LXW/LxwDel?id='+ id,
+                type: 'Delete',
+                success: function (d) {
+                    if (d > 0) {
+                        alert('删除成功');
+                        location.href = '/LXW/Show';
+                    }
+                    else {
+                        alert('删除失败');
+                    }
+                }
+            })
+        }
+    }
+
+    function BandSelCarType() {
+        $.ajax({
+            url: "http://localhost:50222/xxx/try1",
+            type: 'Get',
+            dataType: 'json',
+            async: true,
+            crossDomain: true,
+            contents: "application/json",
+            success: function (d) {
+                $("#Pdd").empty();
+                $("#Pdd").append("<option value=''>--请选择--</option>");
+                $(d).each(function () {
+                    var opt = "<option value=" + this.did + ">" + this.dname + "</option>";
+                    $("#Pdd").append(opt);
+                })
+            }
+        })
+    }
+    function hom(id) {
+        location.href = '/LXW/Upt?id=' + id;
+    }
+</script>
+
+@*<button class="btn btn-app btn-pill btn-sm" type="button" onclick="App.cards( '#sample-card', 'content_hide' );">删除</button>
+    <button class="btn btn-app btn-pill btn-sm" type="button" onclick="App.cards( '#sample-card', 'content_hide' );">编辑</button>*@

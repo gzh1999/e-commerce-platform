@@ -157,7 +157,39 @@ insert into Orders values(033322,3,1,1,4,'2020-5-21','2020-5-21',1,1)
 insert into Orders values(033322,4,1,1,3,'2020-5-21','2020-5-21',1,1)	   
 select * from Orders
 
-drop table Orders
+----------------------------------梁新旺
+create table Man--管理表
+(
+Mid    int identity,
+Mname  varchar(20),--姓名
+Modile varchar(50),--手机号
+Did    int ,--分组
+Mstate  bit,--状态
+Mnotes  varchar(max),--备注
+)
+insert into  Man values('小兰','1368609644',1,'0','无')
+insert into  Man values('米亚','17346205449',3,0,'已离职')
+insert into  Man values('李伟姚','18644929444',4,0,'前端部')
+insert into  Man values('胡迪','7852136444',3,0,'客服部')
+select * from Man
+
+update UserInfo set Mname='李伟姚',Modile='18644929444',m.Did='4',m.Mstate='False',m.Mnotes='' where m.Mid=3
+
+create table Depart
+(
+Did  int identity,
+Dname varchar(20),
+)
+insert into Depart values('产品部')
+insert into Depart values('技术部')
+insert into Depart values('客服部')
+insert into Depart values('财务部')
+insert into Depart values('人事部')
+insert into Depart values('运营部')
+
+select * from Depart
+
+select * from Depart join Man on Depart.Did=Man.Did where Mid=2
 
 
 

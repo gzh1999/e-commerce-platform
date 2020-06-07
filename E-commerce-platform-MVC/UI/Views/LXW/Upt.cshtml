@@ -1,0 +1,451 @@
+﻿
+@{
+    ViewData["Title"] = "Upt";
+}
+
+
+
+
+<!-- Page Content -->
+<div class="container-fluid p-y-md">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-block tab-content">
+                <!-- Profile tab 1 -->
+                <div class="tab-pane fade in active" id="profile-tab1">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">权限设置</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">管理员姓名:</label>
+                                <input type="text" class="form-control" id="Mname" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">管理员电话:</label>
+                                <input type="text" class="form-control" id="Modile" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">管理员所属分组:</label>
+                                <select id="Pdd">
+                                    <option value="3"></option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">管理员状态:</label>
+                                <input id="cb" type="radio" value="true" alt="启用" name="1" />启用&nbsp;
+                                <input id="cbc" type="radio" value="false" alt="禁用" name="1" />禁用
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">备注:</label>
+                            <input type="text" class="form-control" id="Cwen" />
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block" onclick="LinkTo()">取消</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <input id="Button1" type="button" value="保存修改" onclick="Upt()" class="btn btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        
+                <script src="~/lib/jquery/dist/jquery.js"></script>
+                <script>
+                    $(function () {
+                        Fill();
+                       
+                    })
+
+                    function Fill() {
+                        var id = location.search.substr(location.search.indexOf('=') + 1);
+                        var sid = parseInt(id);
+
+                        $.ajax({
+                            url: 'http://localhost:50222/LXW/LxwFill?id=' + sid,
+                            type: 'get',
+                            dataType: 'json',
+                            async: true,
+                            crossDomain: true,
+                            success: function (d) {
+                                $("#Mname").val(d.mname);
+                                $("#Modile").val(d.modile);
+                                $("#Pdd").val(d.did);
+                                if (d.mstate==true) {
+                                    $("#cb").prop("checked", true);
+
+                                }
+                                else {
+                                    $("#cbc").prop("checked", true);
+
+                                }
+                               
+                               
+                                $("#Cwen").val(d.mnotes);
+                            }
+                        })
+                    }
+
+                    function Upt() {
+
+                        var id = location.search.substr(location.search.indexOf('=') + 1);
+                        var sid = parseInt(id);
+
+                        var obj = {};
+                        obj.MId = sid;
+                        obj.Mname = $("#Mname").val();
+                        obj.Modile = $("#Modile").val();
+                        obj.did = parseInt($("#Pdd").val());
+                        if (obj.Mstate==true) {
+                            obj.Mstate = $("#cb").prop("checked");
+                        }
+                        else {
+                            obj.Mstate = $("#cbc").prop("checked");
+                        }
+                       
+                        obj.Mnotes = $("#Mnotes").val();
+
+                        $.ajax({
+                            url: 'http://localhost:50222/LXW/LxwUpt?uid='+ sid,
+                            type: 'post',
+                            data: JSON.stringify(obj),
+                            contentType: "application/json",
+                            dataType: 'json',
+                            success: function (d) {
+                                if (d > 0) {
+                                    alert('修改成功');
+                                    location.href = '/LXW/Show';
+                                }
+                                else {
+                                    alert('修改失败');
+                                }
+                            }
+                        })
+                    }
+                    $(function () {
+                        BandSelCarType();
+                    })
+                    function BandSelCarType() {
+                        $.ajax({
+                            url: "http://localhost:50222/xxx/try1",
+                            type: 'Get',
+                            dataType: 'json',
+                            async: true,
+                            crossDomain: true,
+                            contents: "application/json",
+                            success: function (d) {
+                                $("#Pdd").empty();
+                                $("#Pdd").append("<option value=''>--请选择--</option>");
+                                $(d).each(function () {
+                                    var opt = "<option value=" + this.did + ">" + this.dname + "</option>";
+                                    $("#Pdd").append(opt);
+                                })
+                            }
+                        })
+                    }
+                    function LinkTo() {
+                        location.href = '/Power/Show';
+                    }
+                    
+                   
+                </script>
+                <!-- End profile tab 1 -->
+                <!-- Profile tab 2 -->
+                <div class="tab-pane fade" id="profile-tab2">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">General info</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">First name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">Last name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">Mobile phone</label>
+                                <input type="tel" class="form-control" id="exampleInputPhone1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">Work phone</label>
+                                <input type="datetime-local" class="form-control" id="exampleInputPhone2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">Address</label>
+                            <input type="text" class="form-control" id="exampleInputAddress" />
+                        </div>
+
+                        <h4 class="m-t-md m-b">Change password</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword1">Confirm current password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword2">Confirm new password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword3">New password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" />
+                            </div>
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-app btn-block">Save<span class="hidden-xs"> changes</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End profile tab 2 -->
+                <!-- Profile tab 3 -->
+                <div class="tab-pane fade" id="profile-tab3">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">General info</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">First name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">Last name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">Mobile phone</label>
+                                <input type="tel" class="form-control" id="exampleInputPhone1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">Work phone</label>
+                                <input type="datetime-local" class="form-control" id="exampleInputPhone2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">Address</label>
+                            <input type="text" class="form-control" id="exampleInputAddress" />
+                        </div>
+
+                        <h4 class="m-t-md m-b">Change password</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword1">Confirm current password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword2">Confirm new password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword3">New password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" />
+                            </div>
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-app btn-block">Save<span class="hidden-xs"> changes</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End profile tab 3 -->
+                <!-- Profile tab 4 -->
+                <div class="tab-pane fade" id="profile-tab4">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">General info</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">First name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">Last name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">Mobile phone</label>
+                                <input type="tel" class="form-control" id="exampleInputPhone1">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">Work phone</label>
+                                <input type="datetime-local" class="form-control" id="exampleInputPhone2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">Address</label>
+                            <input type="text" class="form-control" id="exampleInputAddress" />
+                        </div>
+
+                        <h4 class="m-t-md m-b">Change password</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword1">Confirm current password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword2">Confirm new password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword3">New password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" />
+                            </div>
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-app btn-block">Save<span class="hidden-xs"> changes</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End profile tab 4 -->
+                <!-- Profile tab 5 -->
+                <div class="tab-pane fade" id="profile-tab5">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">General info</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">First name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">Last name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">Mobile phone</label>
+                                <input type="tel" class="form-control" id="exampleInputPhone1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">Work phone</label>
+                                <input type="datetime-local" class="form-control" id="exampleInputPhone2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">Address</label>
+                            <input type="text" class="form-control" id="exampleInputAddress" />
+                        </div>
+
+                        <h4 class="m-t-md m-b">Change password</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword1">Confirm current password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword2">Confirm new password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword3">New password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" />
+                            </div>
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-app btn-block">Save<span class="hidden-xs"> changes</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End profile tab 5 -->
+                <!-- Profile tab 6 -->
+                <div class="tab-pane fade" id="profile-tab6">
+                    <form class="fieldset">
+                        <h4 class="m-t-sm m-b">General info</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputName1">First name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputName2">Last name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone1">Mobile phone</label>
+                                <input type="tel" class="form-control" id="exampleInputPhone1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPhone2">Work phone</label>
+                                <input type="datetime-local" class="form-control" id="exampleInputPhone2" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddress">Address</label>
+                            <input type="text" class="form-control" id="exampleInputAddress" />
+                        </div>
+
+                        <h4 class="m-t-md m-b">Change password</h4>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword1">Confirm current password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword2">Confirm new password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <label for="exampleInputPassword3">New password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword3" />
+                            </div>
+                        </div>
+                        <div class="row narrow-gutter">
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-default btn-block">Cancel</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" class="btn btn-app btn-block">Save<span class="hidden-xs"> changes</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End profile tab 6 -->
+
+            </div>
+            <!-- .card-block .tab-content -->
+        </div>
+        <!-- .card -->
+    </div>
+    <!-- .col-md-8 -->
+</div>
+<!-- .row -->
+<!-- End Page Content -->
+<!-- End Page Content -->
